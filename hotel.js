@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Get Room ID from URL
     const params = new URLSearchParams(window.location.search);
     const roomId = params.get("id");
 
-    // Room Data (You can replace this with API call)
     const rooms = {
         1: { name: "Beach Paradise", location: "Miami, FL", price: "1050/night", image: "images/hotel1.jpg", description: "A beautiful beachfront stay." },
         2: { name: "Snowy Heights", location: "Aspen, CO", price: "2000/night", image: "images/hotel2.jpg", description: "A cozy retreat in the snowy mountains." },
@@ -11,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
         4: { name: "LA Grand Hotel", location: "Los Angeles, CA", price: "2500/night", image: "images/hotel4.jpg", description: "Experience grand luxury in LA." }
     };
 
-    // Display Room Data if Found
     if (roomId && rooms[roomId]) {
         const room = rooms[roomId];
         document.getElementById("hotel-name").textContent = room.name;
