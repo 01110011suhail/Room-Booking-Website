@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Booking Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="Navbar">
+        <img class="logo" src="images/logo.png" alt="Logo">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#Contact">Contact</a></li>
+            <li><a href="#About">About</a></li>
+        </ul>
+        <div class="search-container">
+            <input id="searchInput" class="nav-input" type="search" placeholder="Search Location or Property Name">
+            <i class="fas fa-search search-icon" onclick="filterRooms()"></i>
+        </div>
+    </nav>
+
+    <header class="Home" id="home">
+        <div class="Home-details">
+            <h1>Roomy <br><span>Feels Like a Home</span></h1>
+            <p>Find the perfect room for your next trip, whether for business or leisure.</p>
+            <button class="Home-btn" type="button">Quick Book</button>
+        </div>
+        <a href="https://wa.me/9090909090" class="whatsapp-button" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </header>
+
+    <section class="Rooms" id="rooms">
+        <h1>Available Rooms</h1>
+        <div class="filters">
+            <select id="locationFilter" onchange="filterRooms()">
+                <option value="">All Locations</option>
+                <option value="Miami, FL">Miami, FL</option>
+                <option value="Aspen, CO">Aspen, CO</option>
+                <option value="New York, NY">New York, NY</option>
+                <option value="Los Angeles, CA">Los Angeles, CA</option>
+                <option value="San Francisco, CA">San Francisco, CA</option>
+                <option value="Orlando, FL">Orlando, FL</option>
+            </select>
+            <select id="priceFilter" onchange="filterRooms()">
+                <option value="">All Prices</option>
+                <option value="1000">Below 1000</option>
+                <option value="2000">1000 - 2000</option>
+                <option value="3000">Above 2000</option>
+            </select>
+        </div>
+        <div class="room-container">
+            <button class="scroll-btn scroll-left">&#10094;</button>
+            <div class="room-listing" id="room-listing">
+                <div class="room-item" data-location="Miami, FL" data-price="1050">
+                    <img src="images/hotel1.jpg" alt="Hotel 1">
+                    <h2>Hotel Sunshine</h2>
+                    <p>Location: Miami, FL</p>
+                    <p>Price: 1050/night</p>
+                    <a href="hotel.html?id=1" class="view-details">View Details</a>
+                </div>
+                <div class="room-item" data-location="Aspen, CO" data-price="2000">
+                    <img src="images/hotel2.jpg" alt="Hotel 2">
+                    <h2>Mountain Retreat</h2>
+                    <p>Location: Aspen, CO</p>
+                    <p>Price: 2000/night</p>
+                    <a href="hotel.html?id=2" class="view-details">View Details</a>
+                </div>
+                <div class="room-item" data-location="New York, NY" data-price="1800">
+                    <img src="images/hotel3.jpg" alt="Hotel 3">
+                    <h2>City Center Inn</h2>
+                    <p>Location: New York, NY</p>
+                    <p>Price: 1800/night</p>
+                    <a href="hotel.html?id=3" class="view-details">View Details</a>
+                </div>
+                <div class="room-item" data-location="Los Angeles, CA" data-price="2500">
+                    <img src="images/hotel4.jpg" alt="Hotel 4">
+                    <h2>LA Grand Hotel</h2>
+                    <p>Location: Los Angeles, CA</p>
+                    <p>Price: 2500/night</p>
+                    <a href="hotel.html?id=4" class="view-details">View Details</a>
+                </div>
+            </div>
+            <button class="scroll-btn scroll-right">&#10095;</button>
+        </div>
+    
+        <div class="room-container">
+            <button class="scroll-btn scroll-left">&#10094;</button>
+            <div class="room-listing" id="room-listing-2">
+                <div class="room-item" data-location="Miami, FL" data-price="1050">
+                    <img src="images/hotel1.jpg" alt="Hotel 1">
+                    <h2>Beach Paradise</h2>
+                    <p>Location: Miami, FL</p>
+                    <p>Price: 1050/night</p>
+                    <a href="hotel.html?id=5" class="view-details">View Details</a>
+                </div>
+                <div class="room-item" data-location="Aspen, CO" data-price="2000">
+                    <img src="images/hotel2.jpg" alt="Hotel 2">
+                    <h2>Snowy Heights</h2>
+                    <p>Location: Aspen, CO</p>
+                    <p>Price: 2000/night</p>
+                    <a href="hotel.html?id=6" class="view-details">View Details</a>
+                </div>
+                <div class="room-item" data-location="New York, NY" data-price="1800">
+                    <img src="images/hotel3.jpg" alt="Hotel 3">
+                    <h2>Empire Suites</h2>
+                    <p>Location: New York, NY</p>
+                    <p>Price: 1800/night</p>
+                    <a href="hotel.html?id=7" class="view-details">View Details</a>
+                </div>
+                <div class="room-item" data-location="Los Angeles, CA" data-price="2500">
+                    <img src="images/hotel4.jpg" alt="Hotel 4">
+                    <h2>LA Grand Hotel</h2>
+                    <p>Location: Los Angeles, CA</p>
+                    <p>Price: 2500/night</p>
+                    <a href="hotel.html?id=8" class="view-details">View Details</a>
+                </div>
+            </div>
+            <button class="scroll-btn scroll-right">&#10095;</button>
+        </div>
+    </section>
+
+    
+    <section id="Contact">
+        <h1>Contact Us</h1>
+        <div class="contact-form">
+            <label for="Name">Name</label>
+            <input type="text" placeholder="Name" required>
+            <label for="Email">Email</label>
+            <input type="email" placeholder="Email" required>
+            <label for="Phone">Phone</label>
+            <input type="tel" placeholder="Phone" required>
+            <label for="Address">Address</label>
+            <textarea id="Address" placeholder="Enter your address" style=" border-radius:5px"></textarea>
+            <button type="button">Submit</button>
+        </div>  
+    </section>
+
+    <section id="About">
+        <div class="footer">
+            <div class="connect">
+                <h2>Connect With Us</h2>
+                <ul>
+                    <li><h4>Facebook</h4></li>
+                    <li><h4>Twitter</h4></li>
+                    <li><h4>Instagram</h4></li>
+                    <li><h4>WhatsApp</h4></li>
+                </ul>
+            </div>
+    
+            <div class="support">
+                <h2>Support</h2>
+                <ul>
+                    <li><h4>FAQs</h4></li>
+                    <li><h4>Rooms</h4></li>
+                    <li><h4>Contact</h4></li>
+                    <li><h4>Privacy & Policy</h4></li>
+                </ul>
+            </div>
+    
+            <div class="more">
+                <h2>More</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#Rooms">Rooms</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                    <li><a href="#About">About</a></li>
+                </ul>
+            </div>
+    
+            <div class="additional">
+                <h2>Additional Info</h2>
+                <ul>
+                    <li><h4>Blog</h4></li>
+                    <li><h4>Testimonials</h4></li>
+                    <li><h4>Careers</h4></li>
+                    <li><h4>Terms of Service</h4></li>
+                </ul>
+            </div>
+        </div>
+    
+        <hr>
+    
+        <p class="copy"> @2025 RoomY | Privacy Policy | Cookie Policy | Privacy Support</p>
+    </section>
+    
+
+</body>
+</html>
