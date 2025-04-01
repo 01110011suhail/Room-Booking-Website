@@ -70,9 +70,16 @@ body {
 /* Home Section */
 .Home {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     background: url(images/Home1.jpg) center/cover no-repeat;
 }
+
+.home-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 
 .Home-details {
     width: 42%;
@@ -82,8 +89,9 @@ body {
 }
 
 .Home-details h1 {
-    font-size: 65px;
+    font-size: 55px;
     margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .Home-details h1 span {
@@ -119,6 +127,7 @@ body {
     color: orangered;
 }
 
+
 /* WhatsApp Floating Button */
 .whatsapp-button {
     position: fixed;
@@ -142,13 +151,13 @@ body {
     background-color: #128C7E;
 }
 
-/* Rooms Section */
 .Rooms {
     width: 100%;
     height: auto;
-    background: rgb(15, 19, 33);
+    background: rgb(16, 19, 32);
     text-align: center;
     padding: 20px;
+
 }
 
 .Rooms h1 {
@@ -159,28 +168,32 @@ body {
 
 .room-listing {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    /* background: yellow; */
     height: 60vh;
+    text-align: center;
+    background: rgb(11, 19, 45);
+
 }
 
 .room-item {
-    border: 1px solid #ccc;
+
+    border: 1px solid #323131;
     border-radius: 8px;
     overflow: hidden;
     width: 300px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(227, 225, 225, 0.1);
     transition: transform 0.3s;
-    /* background: yellow; */
+    padding: 5px;
+
 }
 
+
+
+
+
 .room-container{
-    /* width: 80%; */
-    /* margin:30px; */
     padding: 0px 20px;
-    background: rgb(63, 63, 63);
 
 
 }
@@ -190,23 +203,25 @@ body {
 }
 
 .room-item img {
-    width: 90%;
-    height: 200px;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 
 
 .view-details {
     display: block;
-    background-color: #25D366;
+    background-color: #0a5827;
     color: white;
     padding: 10px;
     text-decoration: none;
     border-radius: 5px;
     margin: 10px 0;
     transition: background-color 0.3s;
+    font-weight: 700;
 }
+
 
 /* Filters */
 #locationFilter, #priceFilter {
@@ -412,10 +427,10 @@ body {
     scroll-behavior: smooth;
     gap: 20px;
     padding: 10px;
-    padding-left: 100px;
+    /* padding-left: 100px; */
     white-space: nowrap;
-    scrollbar-width: none; /* Hides scrollbar in Firefox */
-    -ms-overflow-style: none; /* Hides scrollbar in IE */
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
 }
 
 .room-listing::-webkit-scrollbar {
@@ -501,7 +516,6 @@ body {
 
 .booking-form {
     text-align: center;
-    margin-top: 20px;
 }
 
 .booking-form input {
@@ -509,5 +523,34 @@ body {
     margin: 10px auto;
     padding: 10px;
     width: 200px;
+}
+
+
+
+
+
+
+.search-results {
+    position: absolute;
+    background: white;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.search-results div {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-results div:hover {
+    background: #f0f0f0;
 }
 

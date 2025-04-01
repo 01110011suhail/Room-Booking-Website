@@ -16,15 +16,21 @@
             <li><a href="#Contact">Contact</a></li>
             <li><a href="#About">About</a></li>
         </ul>
-        <div class="search-container">
+        <!-- <div class="search-container">
             <input id="searchInput" class="nav-input" type="search" placeholder="Search Location or Property Name">
             <i class="fas fa-search search-icon" onclick="filterRooms()"></i>
+        </div> -->
+        <div class="search-container">
+            <input id="searchInput" class="nav-input" type="search" placeholder="Search hotel or location..." onkeyup="searchHotels()">
+            <i class="fas fa-search search-icon"></i>
+            <div id="searchResults" class="search-results"></div>
         </div>
+        
     </nav>
 
     <header class="Home" id="home">
         <div class="Home-details">
-            <h1>Roomy <br><span>Feels Like a Home</span></h1>
+            <h1>ATWAH  INTERNATIONAL  <br><span>Feels Like a Home</span></h1>
             <p>Find the perfect room for your next trip, whether for business or leisure.</p>
             <button class="Home-btn" type="button">Quick Book</button>
         </div>
@@ -54,34 +60,41 @@
         </div>
         <div class="room-container">
             <button class="scroll-btn scroll-left">&#10094;</button>
-            <div class="room-listing" id="room-listing">
+            <div class="room-listing" id="room-listing-1">
                 <div class="room-item" data-location="Mumbai, India" data-price="1050">
                     <img src="images/hotel1.jpg" alt="Hotel 1">
                     <h2>Hotel Sunshine</h2>
                     <p>Location: Mumbai, India</p>
-                    <p>Price: 1050/night</p>
+                    <p>Price:     $1050 / night</p>
                     <a href="hotel.html?id=1" class="view-details">View Details</a>
                 </div>
                 <div class="room-item" data-location="Pune, India" data-price="2000">
                     <img src="images/hotel2.jpg" alt="Hotel 2">
                     <h2>Mountain Retreat</h2>
                     <p>Location: Pune, India</p>
-                    <p>Price: 2900/night</p>
+                    <p>Price: $2900 / night</p>
                     <a href="hotel.html?id=2" class="view-details">View Details</a>
                 </div>
                 <div class="room-item" data-location="Mumbai, India" data-price="1800">
                     <img src="images/hotel3.jpg" alt="Hotel 3">
                     <h2>City Center Inn</h2>
                     <p>Location: Mumbai, India</p>
-                    <p>Price: 3800/night</p>
+                    <p>Price: $3800 / night</p>
                     <a href="hotel.html?id=3" class="view-details">View Details</a>
                 </div>
                 <div class="room-item" data-location="Bengaluru, India" data-price="2500">
                     <img src="images/hotel4.jpg" alt="Hotel 4">
                     <h2>LA Grand Hotel</h2>
                     <p>Location: Bengaluru, India</p>
-                    <p>Price: 2500/night</p>
+                    <p>Price: 2500 / night</p>
                     <a href="hotel.html?id=4" class="view-details">View Details</a>
+                </div>
+                <div class="room-item" data-location="Mecca, Saudi Arabia" data-price="3000">
+                    <img src="images/mecca-hotel.jpg" alt="Mecca Hotel">
+                    <h2>Luxury Mecca Stay</h2>
+                    <p>Location: Mecca, Saudi Arabia</p>
+                    <p>Price: 3000 / night</p>
+                    <a href="hotel.html?id=9" class="view-details">View Details</a>
                 </div>
             </div>
             <button class="scroll-btn scroll-right">&#10095;</button>
@@ -94,28 +107,28 @@
                     <img src="images/hotel1.jpg" alt="Hotel 1">
                     <h2>Beach Paradise</h2>
                     <p>Location: Goa, India</p>
-                    <p>Price: 4050/night</p>
+                    <p>Price: $4050 / night</p>
                     <a href="hotel.html?id=5" class="view-details">View Details</a>
                 </div>
                 <div class="room-item" data-location="Hyderabad, India" data-price="2000">
                     <img src="images/hotel2.jpg" alt="Hotel 2">
                     <h2>Snowy Heights</h2>
                     <p>Location: Hyderabad, India</p>
-                    <p>Price: 2200/night</p>
+                    <p>Price: $2200 / night</p>
                     <a href="hotel.html?id=6" class="view-details">View Details</a>
                 </div>
                 <div class="room-item" data-location="Bihar, India" data-price="1800">
                     <img src="images/hotel3.jpg" alt="Hotel 3">
                     <h2>Empire Suites</h2>
                     <p>Location: Bihar, India</p>
-                    <p>Price: 1800/night</p>
+                    <p>Price: $1800 / night</p>
                     <a href="hotel.html?id=7" class="view-details">View Details</a>
                 </div>
                 <div class="room-item" data-location="Delhi, India" data-price="2500">
                     <img src="images/hotel4.jpg" alt="Hotel 4">
                     <h2>LA Grand Hotel</h2>
                     <p>Location: Delhi, India</p>
-                    <p>Price: 2500/night</p>
+                    <p>Price: $2500 / night</p>
                     <a href="hotel.html?id=8" class="view-details">View Details</a>
                 </div>
                         </div>
@@ -154,8 +167,8 @@
             <div class="support">
                 <h2>Support</h2>
                 <ul>
-                    <li><h4>FAQs</h4></li>
-                    <li><h4>Rooms</h4></li>
+                    <li><a href="Faqs.html" target="_blank">FAQ's</a></li>
+                    <li><a href="#Rooms" target="_blank">Rooms</a></li>
                     <li><h4>Contact</h4></li>
                     <li><h4>Privacy & Policy</h4></li>
                 </ul>
@@ -184,9 +197,11 @@
     
         <hr>
     
-        <p class="copy"> @2025 RoomY | Privacy Policy | Cookie Policy | Privacy Support</p>
+        <p class="copy"> @2025 ATWAH INTERNATIONAL | Privacy Policy | Cookie Policy | Privacy Support</p>
     </section>
-    
+    <script src="script.js"></script>
 
+        
+    
 </body>
 </html>
