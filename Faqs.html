@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
     <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        background-color: #cfcdcd;
         margin: 0;
-        padding: 20px;
     }
     
     .faq-container {
@@ -18,7 +19,25 @@
         background: white;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        margin-bottom: 20px;
+    }
+    .faq-header{
+        text-align: center;
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    
+    }
+    .faq-header h1{
+        font-size: 50px;
+    }
+    .faq-header p{
         padding: 20px;
+        color: rgb(99, 96, 96);
     }
     
     h1 {
@@ -27,11 +46,12 @@
     }
     
     .faq-item {
-        margin-bottom: 10px;
+        padding: 10px;
     }
     
+
     .faq-question {
-        background-color: #007BFF;
+        background-color: #05468c;
         color: white;
         border: none;
         padding: 15px;
@@ -40,6 +60,9 @@
         font-size: 16px;
         border-radius: 5px;
         cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         transition: background-color 0.3s;
     }
     
@@ -53,7 +76,7 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         margin-top: 5px;
-        background-color: #f9f9f9;
+        background-color: rgb(207, 204, 204);
     }
     </style>
     <title>Faqs</title>
@@ -63,10 +86,10 @@
     <nav class="Navbar">
         <img class="logo" src="images/logo.png" alt="Logo">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#rooms">Rooms</a></li>
-            <li><a href="#Contact">Contact</a></li>
-            <li><a href="#About">About</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#rooms">Rooms</a></li>
+            <li><a href="index.html#Contact">Contact</a></li>
+            <li><a href="index.html#About">About</a></li>
         </ul>
         <!-- <div class="search-container">
             <input id="searchInput" class="nav-input" type="search" placeholder="Search Location or Property Name">
@@ -80,76 +103,92 @@
         
     </nav>
 
+
     <section id="Faq">
+        <div class="faq-header">
+            <h1>Frequently Asked Questions</h1>
+            <p>We Compiled  a list of address your most pressing questions regarding our Services.</p>
+        </div>
 
         <div class="faq-container">
             <h1>Frequently Asked Questions (FAQs) - Hotel Room Booking</h1>
     
             <div class="faq-item">
-                <button class="faq-question">How do I make a reservation?</button>
+                <button class="faq-question">How do I make a reservation?       <i class="fas fa-plus"></i>
+                </button>
+
                 <div class="faq-answer">
                     <p>You can make a reservation directly on our website by selecting your desired dates, room type, and completing the booking form. Alternatively, you can call our front desk at (123) 456-7890 to book over the phone.</p>
                 </div>
             </div>
     
             <div class="faq-item">
-                <button class="faq-question">What is your cancellation policy?</button>
+                <button class="faq-question">What is your cancellation policy?                    <i class="fas fa-plus"></i>
+                </button>
                 <div class="faq-answer">
                     <p>Our cancellation policy varies depending on the rate you choose. Generally, you can cancel your reservation up to 48 hours before your arrival date for a full refund. Please check the specific terms during the booking process.</p>
                 </div>
             </div>
     
             <div class="faq-item">
-                <button class="faq-question">What payment methods do you accept?</button>
+                <button class="faq-question">What payment methods do you accept?                    <i class="fas fa-plus"></i>
+                </button>
                 <div class="faq-answer">
                     <p>We accept all major credit cards, debit cards, and PayPal. Payment is typically required at the time of booking, but some rates may allow for payment upon check-in.</p>
                 </div>
             </div>
     
             <div class="faq-item">
-                <button class="faq-question">Is breakfast included in my room rate?</button>
+                <button class="faq-question">Is breakfast included in my room rate?                    <i class="fas fa-plus"></i>
+                </button>
                 <div class="faq-answer">
                     <p>Breakfast inclusion depends on the rate you select. Some rates include complimentary breakfast, while others do not. Please check the details on the booking page for more information.</p>
                 </div>
             </div>
     
             <div class="faq-item">
-                <button class="faq-question">What time is check-in and check-out?</button>
+                <button class="faq-question">What time is check-in and check-out?                    <i class="fas fa-plus"></i>
+                </button>
                 <div class="faq-answer">
                     <p>Check-in time is at 3:00 PM, and check-out time is at 11:00 AM. If you need to check in early or check out late, please contact us in advance, and we will do our best to accommodate your request.</p>
                 </div>
             </div>
     
             <div class="faq-item">
-                <button class="faq-question">Do you offer discounts for extended stays?</button>
+                <button class="faq-question">Do you offer discounts for extended stays?                    <i class="fas fa-plus"></i>
+                </button>
                 <div class="faq-answer">
                     <p>Yes, we offer special rates for extended stays. Please contact our reservations team for more information on long-term booking discounts.</p>
                 </div>
             </div>
     
             <div class="faq-item">
-                <button class="faq-question">Are pets allowed in the hotel?</button>
+                <button class="faq-question">Are pets allowed in the hotel?                    <i class="fas fa-plus"></i>
+                </button>
                 <div class="faq-answer">
                     <p>We are a pet-friendly hotel! However, there may be specific policies and fees associated with bringing pets. Please check our pet policy or contact us for more details.</p>
                 </div>
             </div>
     
             <div class="faq-item">
-                <button class="faq-question">Is parking available at the hotel?</button>
+                <button class="faq-question">Is parking available at the hotel?                    <i class="fas fa-plus"></i>
+                </button>
                 <div class="faq-answer">
                     <p>Yes, we offer on-site parking for our guests. Parking may be complimentary or available for a daily fee, depending on your booking rate. Please check the details during your reservation.</p>
                 </div>
             </div>
     
             <div class="faq-item">
-                <button class="faq-question">What amenities are included with my room?</button>
+                <button class="faq-question">What amenities are included with my room?                    <i class="fas fa-plus"></i>
+                </button>
                 <div class="faq-answer">
                     <p>All our rooms come equipped with complimentary Wi-Fi, a flat-screen TV, air conditioning, and a mini-fridge. Additional amenities may vary by room type, so please check the room description for more details.</p>
                 </div>
             </div>
     
             <div class="faq-item">
-                <button class="faq-question">How can I contact customer support for further questions?</button>
+                <button class="faq-question">How can I contact customer support for further questions?                    <i class="fas fa-plus"></i>
+                </button>
                 <div class="faq-answer">
                     <p>You can reach our customer support team via email at support@examplehotel.com or by calling us at (123) 456-7890. We are available 24/7 to assist you with any inquiries.</p>
                 </div>
@@ -215,22 +254,30 @@
 
     <!-- <script src="script.js"></script> -->
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const faqQuestions = document.querySelectorAll('.faq-question');
-    
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', function() {
-                const answer = this.nextElementSibling;
-    
-                if (answer.style.display === "block") {
-                    answer.style.display = "none";
-                } else {
-                    answer.style.display = "block";
-                }
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+
+                    if (answer.style.display === "block") {
+                        answer.style.display = "none";
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-plus');
+                    } else {
+                        answer.style.display = "block";
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
+                    }
+                });
             });
         });
-    });
     </script>
+
 
     
 </body>
