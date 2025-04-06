@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        
+        .hotel-img{
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
 </head>
 <body>
@@ -18,9 +21,9 @@
         <img class="logo" src="images/logo.png" alt="Logo">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="Rooms.html">Rooms</a></li>
-            <li><a href="#Contact">Contact</a></li>
-            <li><a href="#About">About</a></li>
+            <li><a href="index.html#rooms">Rooms</a></li>
+            <li><a href="index.html#Contact">Contact</a></li>
+            <li><a href="index.html#About">About</a></li>
         </ul>
         <div class="search-container">
             <input id="searchInput" class="nav-input" type="search" placeholder="Search Location or Property Name">
@@ -31,12 +34,18 @@
         <h1 id="hotel-name">Hotel Name</h1>
 
     </header>
-    
-    <div class="gallery">
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <img id="gallery-img" src="images/hotel1.jpg" alt="Hotel Image">
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    <div class="hotel-img">
+        <div class="gallery">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <img id="gallery-img" src="images/hotel1.jpg" alt="Hotel Image">
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+        <div class="map-container">
+            <iframe id="hotel-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509198!2d144.9537353153163!3d-37.81627997975157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f0f0f0f%3A0x0!2sHotel%20Name!5e0!3m2!1sen!2sus!4v1616161616161!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+        </div>
     </div>
+
+
 
     <div class="hotel-info">
         <p id="hotel-location">Location: Loading...</p>

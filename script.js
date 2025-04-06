@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    setupScrollButtons("room-listing", ".scroll-left", ".scroll-right");
+    setupScrollButtons("room-listing-1", ".scroll-left", ".scroll-right");
     setupScrollButtons("room-listing-2", ".scroll-left", ".scroll-right");
 });
 
@@ -65,11 +65,11 @@ function filterRooms() {
     });
 }
 
-document.getElementById("searchInput").addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        filterRooms();
-    }
-});
+// document.getElementById("searchInput").addEventListener("keypress", function(event) {
+//     if (event.key === "Enter") {
+//         filterRooms();
+//     }
+// });
 document.addEventListener("DOMContentLoaded", function () {
     const hotels = [
         { name: "Luxury Mecca Stay", location: "Mecca, Saudi Arabia", url: "hotel.html?id=9" },
@@ -80,6 +80,59 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Beach Paradise", location: "Goa, India", url: "hotel.html?id=5" },
         { name: "Snowy Heights", location: "Hyderabad, India", url: "hotel.html?id=6" }
     ];
+
+    const images = [
+        "images/hotel1.jpg",
+        "images/hotel2.jpg",
+        "images/hotel3.jpg",
+        "images/hotel4.jpg",
+        "images/hotel5.jpg",
+        "images/hotel6.jpg",
+        "images/hotel7.jpg",
+        "images/hotel8.jpg",
+        "images/hotel9.jpg",
+        "images/hotel10.jpg",
+        "images/hotel11.jpg",
+        "images/hotel12.jpg",
+        "images/hotel13.jpg",
+        "images/hotel14.jpg"
+    ];
+
+    const initialImagesToShow = 3;
+    const totalImages = images.length;
+    const remainingImages = totalImages - initialImagesToShow;
+
+    const remainingImagesText = document.getElementById("remaining-images-text");
+    if (remainingImagesText) {
+        remainingImagesText.textContent = `Show More Images (+${remainingImages})`;
+    }
+
+    function filterRooms() {
+        let searchInput = document.getElementById('searchInput')?.value.toLowerCase().trim() || "";
+        let locationFilter = document.getElementById('locationFilter')?.value.toLowerCase().trim() || "";
+        let priceFilter = document.getElementById('priceFilter')?.value || "";
+        
+        let rooms = document.querySelectorAll('.room-item');
+        console.log("Total rooms found:", rooms.length); 
+
+        rooms.forEach(room => {
+            let location = (room.getAttribute('data-location') || "").toLowerCase().trim();
+            let price = parseInt(room.getAttribute('data-price')) || 0;
+            let name = (room.querySelector('h2')?.textContent || "").toLowerCase().trim();
+
+            let locationMatch = !locationFilter || location.includes(locationFilter);
+            let priceMatch = !priceFilter || 
+                            (priceFilter === "1000" && price < 1000) ||
+                            (priceFilter === "2000" && price >= 1000 && price <= 2000) ||
+                            (priceFilter === "3000" && price > 2000);
+            let searchMatch = name.includes(searchInput);
+
+            room.style.display = (locationMatch && priceMatch && searchMatch) ? "block" : "none";
+        });
+    }
+
+    document.getElementById('locationFilter')?.addEventListener('change', filterRooms);
+    document.getElementById('priceFilter')?.addEventListener('change', filterRooms);
 
     function searchHotels() {
         let searchInput = document.getElementById("searchInput").value.toLowerCase();
@@ -113,4 +166,48 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("searchResults").style.display = "none";
         }
     });
+
+    function setupScrollButtons(containerId, leftBtnClass, rightBtnClass) {
+        const scrollContainer = document.getElementById(containerId);
+        const scrollLeftBtn = document.querySelector(leftBtnClass);
+        const scrollRightBtn = document.querySelector(rightBtnClass);
+
+        if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+            const scrollAmount = 300;
+
+            scrollLeftBtn.addEventListener("click", function (event) {
+                event.preventDefault();
+                event.stopPropagation(); // Prevent the event from bubbling up to parent elements
+
+                scrollContainer.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+            });
+
+            scrollRightBtn.addEventListener("click", function (event) {
+                event.preventDefault();
+                event.stopPropagation(); // Prevent the event from bubbling up to parent elements
+
+
+                scrollContainer.scrollBy({ left: scrollAmount, behavior: "smooth" });
+            });
+        }
+    }
+
+    setupScrollButtons("room-listing", ".scroll-left", ".scroll-right");
+    setupScrollButtons("room-listing-2", ".scroll-left", ".scroll-right");
 });
+
+function openModal(src) {
+    const modal = document.getElementById("myModal");
+    const mainImage = modal.querySelector('.modal-content img');
+    if (src) {
+        mainImage.src = src; 
+    } else {
+        mainImage.src = ''; 
+    }
+    modal.style.display = "flex"; 
+}
+
+function closeModal() {
+    const modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}

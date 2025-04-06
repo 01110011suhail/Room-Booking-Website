@@ -411,9 +411,11 @@ body {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
-  gap: 20px;
+  gap: 30px;
   padding: 10px;
   white-space: nowrap;
+  width: 83%;
+  margin-left: 100px;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -423,7 +425,9 @@ body {
 }
 
 .room-item {
-  flex: 0 0 auto;
+
+
+  flex: 0 0  auto;
   width: 300px; 
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -431,6 +435,7 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   background: white;
   text-align: center;
+
 }
 
 .room-item img {
