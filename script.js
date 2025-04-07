@@ -72,7 +72,7 @@ function filterRooms() {
 // });
 document.addEventListener("DOMContentLoaded", function () {
     const hotels = [
-        { name: "Mercure Makkah Aziziah", location: "6541 Koulliat Al Banat, Al Jamiah, Makkah 24243, Saudi Arabia", url: "hotel.html?id=9" },
+        { name: "Mercure Makkah Aziziah", location: "6541 Koulliat Al Banat, Al Jamiah, Makkah 24243, Saudi Arabia", url: "hotel.html?id=5" },
         { name: "Violet Hotel", location: "At Taif Road, Al Aziziyah, Mecca, Saudi Arabia, 24235", url: "hotel.html?id=1" },
         { name: "ATWAH Dar Al Sharif", location: "Makkah Al-Mukarramah - Al-Aziziyah South, in front of Al-Muhaisni Traffic light.", url: "hotel.html?id=2" },
         { name: "Hotel ATWAH DAR AL BARKAWI", location: "Off All Sitten Street-Facing Prophet Masjid -King Fahd Gate(23), 30921 Medina, Saudi Arabia", url: "hotel.html?id=3" },

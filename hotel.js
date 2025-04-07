@@ -10,14 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
             images: [
                 "images/hoteln1.jpg",
                 "images/mercure1.jpg",
-                "images/hoteln1_2.jpg",
-                "images/hoteln1_3.jpg",
-                "images/hoteln1_4.jpg",
-                "images/hoteln1_5.jpg",
-                "images/hoteln1_6.jpg",
-                "images/hoteln1_7.jpg",
-                "images/hoteln1_8.jpg",
-                "images/hoteln1_9.jpg"
+                "images/mercure2.jpg",
+                "images/mercure4.jpg",
+                "images/mercure5.jpg",
+                "images/mercure6.jpg",
+                "images/mercure7.jpg",
+                "images/mercure8.jpg",
+                "images/mercure9.jpg",
+                "images/mercure10.jpg"
             ],
             description: "Experience the luxury in SA." 
         },
@@ -26,16 +26,19 @@ document.addEventListener("DOMContentLoaded", function () {
             location: "At Taif Road, Al Aziziyah, Mecca, Saudi Arabia, 24235", 
             price: "135 SAR /night", 
             images: [
-                "images/hoteln2.jpg",
-                "images/hoteln2_1.jpg",
-                "images/hoteln2_2.jpg",
-                "images/hoteln2_3.jpg",
-                "images/hoteln2_4.jpg",
-                "images/hoteln2_5.jpg",
-                "images/hoteln2_6.jpg",
-                "images/hoteln2_7.jpg",
-                "images/hoteln2_8.jpg",
-                "images/hoteln2_9.jpg"
+                "images/voileth.jpg",
+
+                "images/voilet1.jpg",
+                "images/voilet2.jpg",
+                "images/voilet3.jpg",
+                "images/voilet4.jpg",
+                "images/voilet5.jpg",
+                "images/voilet6.jpg",
+                "images/voilet7.jpg",
+                "images/voilet8.jpg",
+                "images/voilet9.jpg",
+                "images/voilet10.jpg",
+                "images/voilet11.jpg"
             ],
             description: "Experience  & enjoy the luxury stay in SA." 
         },
@@ -44,16 +47,13 @@ document.addEventListener("DOMContentLoaded", function () {
             location: "Makkah Al-Mukarramah - Al-Aziziyah South, in front of Al-Muhaisni Traffic light.", 
             price: "130 SAR /night", 
             images: [
-                "images/hoteln2.jpg",
-                "images/hoteln2_1.jpg",
-                "images/hoteln2_2.jpg",
-                "images/hoteln2_3.jpg",
-                "images/hoteln2_4.jpg",
-                "images/hoteln2_5.jpg",
-                "images/hoteln2_6.jpg",
-                "images/hoteln2_7.jpg",
-                "images/hoteln2_8.jpg",
-                "images/hoteln2_9.jpg"
+                "images/atwah1.jpg",
+                "images/atwah2.jpg",
+                "images/atwah3.jpg",
+                "images/atwah4.jpg",
+                "images/atwah5.jpg",
+                "images/atwah6.jpg",
+                "images/atwah7.jpg"
             ],
             description: "Experience the best View in SA." 
         },
@@ -62,16 +62,12 @@ document.addEventListener("DOMContentLoaded", function () {
             location: "At Taif Road, Al Aziziyah, Mecca, Saudi Arabia, 24235", 
             price: "90 SAR /night", 
             images: [
-                "images/hoteln2.jpg",
-                "images/hoteln2_1.jpg",
-                "images/hoteln2_2.jpg",
-                "images/hoteln2_3.jpg",
-                "images/hoteln2_4.jpg",
-                "images/hoteln2_5.jpg",
-                "images/hoteln2_6.jpg",
-                "images/hoteln2_7.jpg",
-                "images/hoteln2_8.jpg",
-                "images/hoteln2_9.jpg"
+                "images/ATWA1.jpg",
+                "images/ATWA2.jpg",
+                "images/ATWA3.jpg",
+                "images/ATWA4.jpg",
+                "images/ATWA5.jpg",
+                "images/ATWA6.jpg"
             ],
             description: "experience the affordable best  in SA." 
         },
@@ -107,13 +103,35 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("hotel-location").textContent = `Location: ${room.location}`;
         document.getElementById("hotel-price").textContent = `Price: ${room.price}`;
         document.getElementById("hotel-description").textContent = `Description: ${room.description}`;
-        document.getElementById("gallery-img").src = room.image;
-    } else {
-        document.querySelector(".hotel-info").innerHTML = "<h2>Room not found</h2>";
+        // document.getElementById("gallery-img").src = room.image;
+    // } else {
+    //     document.querySelector(".hotel-info").innerHTML = "<h2>Room not found</h2>";
+    // }
+    let currentSlide = 0;
+    const galleryImg = document.getElementById("gallery-img");
+    galleryImg.src = room.images[currentSlide];
+
+     function changeSlide(direction) {
+        currentSlide += direction;
+        if (currentSlide < 0) {
+            currentSlide = room.images.length - 1; 
+        } else if (currentSlide >= room.images.length) {
+            currentSlide = 0; 
+        }
+        galleryImg.src = room.images[currentSlide];
     }
+
+     document.querySelector(".prev").addEventListener("click", function() {
+        changeSlide(-1);
+    });
+
+    document.querySelector(".next").addEventListener("click", function() {
+        changeSlide(1);
+    });
+} else {
+    document.querySelector(".hotel-info").innerHTML = "<h2>Room not found</h2>";
+}
 });
-
-
 // let currentSlide = 0;
 // const images = [
 //     "images/hotel1.jpg",
@@ -178,32 +196,32 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 
-let currentSlide = 0;
+// let currentSlide = 0;
 
-function setupImageGallery(images) {
-    const galleryImg = document.getElementById("gallery-img");
-    const totalImages = images.length;
+// function setupImageGallery(images) {
+//     const galleryImg = document.getElementById("gallery-img");
+//     const totalImages = images.length;
 
-    // Function to change the slide
-    function changeSlide(direction) {
-        currentSlide += direction;
-        if (currentSlide < 0) {
-            currentSlide = totalImages - 1; 
-        } else if (currentSlide >= totalImages) {
-            currentSlide = 0; 
-        }
-        galleryImg.src = images[currentSlide];
-    }
+//     // Function to change the slide
+//     function changeSlide(direction) {
+//         currentSlide += direction;
+//         if (currentSlide < 0) {
+//             currentSlide = totalImages - 1; 
+//         } else if (currentSlide >= totalImages) {
+//             currentSlide = 0; 
+//         }
+//         galleryImg.src = images[currentSlide];
+//     }
 
-    // Set up event listeners for the previous and next buttons
-    document.getElementById("prev-btn").addEventListener("click", function() {
-        changeSlide(-1);
-    });
+//     // Set up event listeners for the previous and next buttons
+//     document.getElementById("prev-btn").addEventListener("click", function() {
+//         changeSlide(-1);
+//     });
 
-    document.getElementById("next-btn").addEventListener("click", function() {
-        changeSlide(1);
-    });
-}
+//     document.getElementById("next-btn").addEventListener("click", function() {
+//         changeSlide(1);
+//     });
+// }
 document.getElementById("generate-bill").addEventListener("click", function () {
     const checkIn = document.getElementById("check-in").value;
     const checkOut = document.getElementById("check-out").value;
@@ -245,7 +263,7 @@ document.getElementById("generate-bill").addEventListener("click", function () {
         Check-out: ${checkOut}
         Guests: ${guests}
         Nights: ${nights}
-        Total Price: ₹${totalPrice}`);
+        Total Price: ₹SAR{totalPrice}`);
 });
 
 document.querySelector(".close-btn").addEventListener("click", function () {
@@ -260,4 +278,3 @@ document.getElementById("confirm-booking").addEventListener("click", function ()
 
 
 
-        
