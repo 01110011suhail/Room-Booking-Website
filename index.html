@@ -11,7 +11,7 @@
     />
   </head>
   <body>
-    <nav class="Navbar">
+    <!-- <nav class="Navbar">
       <img class="logo" src="images/logo.png" alt="Logo" />
       <ul>
         <li><a href="#">Home</a></li>
@@ -19,10 +19,10 @@
         <li><a href="#Contact">Contact</a></li>
         <li><a href="#About">About</a></li>
       </ul>
-      <!-- <div class="search-container">
+      <div class="search-container">
             <input id="searchInput" class="nav-input" type="search" placeholder="Search Location or Property Name">
             <i class="fas fa-search search-icon" onclick="filterRooms()"></i>
-        </div> -->
+        </div>
       <div class="search-container">
         <input
           id="searchInput"
@@ -34,7 +34,41 @@
         <i class="fas fa-search search-icon"></i>
         <div id="searchResults" class="search-results"></div>
       </div>
+    </nav> -->
+
+    <nav class="Navbar">
+      <img class="logo" src="images/logo.png" alt="Logo" />
+    
+      <!-- Visible only on desktop -->
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#Contact">Contact</a></li>
+        <li><a href="#About">About</a></li>
+      </ul>
+    
+      <!-- Visible only on mobile -->
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    
+      <div class="search-container">
+        <input id="searchInput" class="nav-input" type="search" placeholder="Search hotel or location..." onkeyup="searchHotels()" />
+        <i class="fas fa-search search-icon"></i>
+        <div id="searchResults" class="search-results"></div>
+      </div>
     </nav>
+    
+    <!-- Sidebar for mobile -->
+    <nav class="sidebar" id="sidebar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#Contact">Contact</a></li>
+        <li><a href="#About">About</a></li>
+      </ul>
+      <button class="close-btn" id="closeBtn">×</button>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+    
 
     <header class="Home" id="home">
       <div class="Home-details">
@@ -46,7 +80,7 @@
         <button class="Home-btn" type="button">Quick Book</button>
       </div>
       <a
-        href="https://wa.me/9090909090"
+        href="https://wa.me/966576989556?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%20%20I%20have%20an%20enquiry%20regarding%20room%20bookings.%20Could%20you%20please%20assist%20me?%20جزاك%20الله%20خيرا"
         class="whatsapp-button"
         target="_blank"
       >

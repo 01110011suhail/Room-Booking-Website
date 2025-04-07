@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const scrollRightBtn = document.querySelector(rightBtnClass);
 
         if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
-            const scrollAmount = 300;
+            const scrollAmount = 350;
 
             scrollLeftBtn.addEventListener("click", function () {
                 scrollContainer.scrollBy({ left: -scrollAmount, behavior: "smooth" });
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const scrollRightBtn = document.querySelector(rightBtnClass);
 
         if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
-            const scrollAmount = 300;
+            const scrollAmount = 350;
 
             scrollLeftBtn.addEventListener("click", function (event) {
                 event.preventDefault();
@@ -206,3 +206,32 @@ function closeModal() {
     const modal = document.getElementById("myModal");
     modal.style.display = "none";
 }
+
+//checking
+
+// script.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = document.getElementById('closeBtn');
+
+    // Function to open the sidebar
+    menuToggle.addEventListener('click', function() {
+        sidebar.style.left = '0'; // Show sidebar
+        overlay.style.display = 'block'; // Show overlay
+    });
+
+    // Function to close the sidebar
+    closeBtn.addEventListener('click', function() {
+        sidebar.style.left = '-250px'; // Hide sidebar
+        overlay.style.display = 'none'; // Hide overlay
+    });
+
+    // Close sidebar when clicking on the overlay
+    overlay.addEventListener('click', function() {
+        sidebar.style.left = '-250px'; // Hide sidebar
+        overlay.style.display = 'none'; // Hide overlay
+    });
+});

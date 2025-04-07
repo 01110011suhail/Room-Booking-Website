@@ -9,27 +9,42 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <style>
-        .hotel-img{
-            display: flex;
-            justify-content: space-between;
-        }
-    </style>
+
 </head>
 <body>
     <nav class="Navbar">
-        <img class="logo" src="images/logo.png" alt="Logo">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#rooms">Rooms</a></li>
-            <li><a href="index.html#Contact">Contact</a></li>
-            <li><a href="index.html#About">About</a></li>
+        <img class="logo" src="images/logo.png" alt="Logo" />
+      
+        <!-- Visible only on desktop -->
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#rooms">Rooms</a></li>
+          <li><a href="#Contact">Contact</a></li>
+          <li><a href="#About">About</a></li>
         </ul>
+      
+        <!-- Visible only on mobile -->
+        <button class="menu-toggle" id="menuToggle">☰</button>
+      
         <div class="search-container">
-            <input id="searchInput" class="nav-input" type="search" placeholder="Search Location or Property Name">
-            <i class="fas fa-search search-icon" onclick="filterRooms()"></i>
+          <input id="searchInput" class="nav-input" type="search" placeholder="Search hotel or location..." onkeyup="searchHotels()" />
+          <i class="fas fa-search search-icon"></i>
+          <div id="searchResults" class="search-results"></div>
         </div>
-    </nav>
+      </nav>
+      
+      <!-- Sidebar for mobile -->
+      <nav class="sidebar" id="sidebar">
+        <ul>
+          <li><a href="index.html#">Home</a></li>
+          <li><a href="index.html#rooms">Rooms</a></li>
+          <li><a href="index.html#Contact">Contact</a></li>
+          <li><a href="index.html#About">About</a></li>
+        </ul>
+        <button class="close-btn" id="closeBtn">×</button>
+      </nav>
+      <div class="overlay" id="overlay"></div>
+  
     <header>
         <h1 id="hotel-name">Hotel Name</h1>
 
@@ -37,7 +52,7 @@
     <div class="hotel-img">
         <div class="gallery">
             <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-            <img id="gallery-img" src="images/hotel1.jpg" alt="Hotel Image">
+            <img id="gallery-img" src="images/mercure1.jpg" alt="Hotel Image">
             <button class="next" onclick="changeSlide(1)">&#10095;</button>
         </div>
         <div class="map-container">
