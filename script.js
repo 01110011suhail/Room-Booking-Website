@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     setupScrollButtons("room-listing-1", ".scroll-left", ".scroll-right");
-    setupScrollButtons("room-listing-2", ".scroll-left", ".scroll-right");
+    // setupScrollButtons("room-listing-2", ".scroll-left", ".scroll-right");
 });
 
 
@@ -72,13 +72,11 @@ function filterRooms() {
 // });
 document.addEventListener("DOMContentLoaded", function () {
     const hotels = [
-        { name: "Luxury Mecca Stay", location: "Mecca, Saudi Arabia", url: "hotel.html?id=9" },
-        { name: "Hotel Sunshine", location: "Mumbai, India", url: "hotel.html?id=1" },
-        { name: "Mountain Retreat", location: "Pune, India", url: "hotel.html?id=2" },
-        { name: "City Center Inn", location: "Mumbai, India", url: "hotel.html?id=3" },
-        { name: "LA Grand Hotel", location: "Bengaluru, India", url: "hotel.html?id=4" },
-        { name: "Beach Paradise", location: "Goa, India", url: "hotel.html?id=5" },
-        { name: "Snowy Heights", location: "Hyderabad, India", url: "hotel.html?id=6" }
+        { name: "Mercure Makkah Aziziah", location: "6541 Koulliat Al Banat, Al Jamiah, Makkah 24243, Saudi Arabia", url: "hotel.html?id=9" },
+        { name: "Violet Hotel", location: "At Taif Road, Al Aziziyah, Mecca, Saudi Arabia, 24235", url: "hotel.html?id=1" },
+        { name: "ATWAH Dar Al Sharif", location: "Makkah Al-Mukarramah - Al-Aziziyah South, in front of Al-Muhaisni Traffic light.", url: "hotel.html?id=2" },
+        { name: "Hotel ATWAH DAR AL BARKAWI", location: "Off All Sitten Street-Facing Prophet Masjid -King Fahd Gate(23), 30921 Medina, Saudi Arabia", url: "hotel.html?id=3" },
+        { name: "Fares Ajyad Hotel", location: "CRCJ+GXC, King Abdul Aziz Rd, Ajyad, Makkah 24231, Saudi Arabia", url: "hotel.html?id=4" },
     ];
 
     const images = [
@@ -177,14 +175,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             scrollLeftBtn.addEventListener("click", function (event) {
                 event.preventDefault();
-                event.stopPropagation(); // Prevent the event from bubbling up to parent elements
 
                 scrollContainer.scrollBy({ left: -scrollAmount, behavior: "smooth" });
             });
 
             scrollRightBtn.addEventListener("click", function (event) {
                 event.preventDefault();
-                event.stopPropagation(); // Prevent the event from bubbling up to parent elements
 
 
                 scrollContainer.scrollBy({ left: scrollAmount, behavior: "smooth" });
@@ -192,7 +188,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    setupScrollButtons("room-listing", ".scroll-left", ".scroll-right");
     setupScrollButtons("room-listing-2", ".scroll-left", ".scroll-right");
 });
 
