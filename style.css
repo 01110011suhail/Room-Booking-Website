@@ -46,12 +46,12 @@ body {
   display: none;
   position: fixed;
   top: 0;
-  left: -250px; /* Hide sidebar off-screen */
+  left: -250px; 
   width: 250px;
   height: 100%;
   background-color: rgb(23, 24, 24);
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-  transition: left 0.3s ease; /* Smooth transition */
+  transition: left 0.3s ease; 
   z-index: 1000;
 }
 
@@ -92,7 +92,7 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  display: none; /* Hidden by default */
+  display: none; 
   z-index: 999;
 }
 
@@ -250,19 +250,19 @@ body {
 } */
 .room-listing {
   display: flex;
-  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-x: auto; 
   scroll-behavior: smooth;
-  gap: 30px; /* Space between items */
-  padding: 10px; /* Padding around the container */
-  white-space: nowrap; /* Prevent items from wrapping */
-  width: 100%; /* Ensure it takes full width */
-  margin: 0 auto; /* Center the container */
-  scrollbar-width: thin; /* For Firefox */
-  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  gap: 30px; 
+  padding: 10px; 
+  white-space: nowrap; 
+  width: 100%; 
+  margin: 0 auto;
+  scrollbar-width: thin; 
+  -ms-overflow-style: none; 
 }
 
 .room-listing::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for WebKit browsers */
+  display: none; 
 }
 
 .room-item {
@@ -637,6 +637,76 @@ body {
   background: #f0f0f0;
 }
 
+/* faq */
+
+.faq-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+.faq-header {
+  text-align: center;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.faq-header h1 {
+  font-size: 50px;
+}
+
+.faq-header p {
+  padding: 20px;
+  color: rgb(99, 96, 96);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.faq-item {
+  padding: 10px;
+}
+
+.faq-question {
+  background-color: #05468c;
+  color: white;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+  background-color: #0056b3;
+}
+
+.faq-answer {
+  display: none; 
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: rgb(207, 204, 204);
+}
+
+
 
 
 /* mobile resonsiveness */
@@ -768,49 +838,49 @@ body {
 
   .contact-form input,
   .contact-form textarea {
-    width: 100%; /* Make inputs full width */
-    margin: 10px 0; /* Adjust margin for better spacing */
+    width: 100%; 
+    margin: 10px 0; 
   }
 
   .footer {
-    flex-direction: column; /* Stack footer items vertically */
-    align-items: center; /* Center align footer items */
+    flex-direction: column;
+    align-items: center; 
   }
 
   .footer div {
-    min-width: 100%; /* Make footer items full width */
-    margin-bottom: 20px; /* Add spacing between footer items */
+    min-width: 100%; 
+    margin-bottom: 20px; 
   }
 
   .footer h2 {
-    font-size: 20px; /* Adjust font size for headings */
+    font-size: 20px; 
   }
 
   .footer a,
   .footer h4 {
-    font-size: 14px; /* Adjust font size for links */
+    font-size: 14px; 
   }
 
   .whatsapp-button {
-    width: 50px; /* Adjust size for mobile */
-    height: 50px; /* Adjust size for mobile */
-    font-size: 20px; /* Adjust icon size */
+    width: 50px; 
+    height: 50px; 
+    font-size: 20px;
   }
 
   .scroll-btn {
-    width: 40px; /* Adjust button size for mobile */
-    height: 40px; /* Adjust button size for mobile */
-    font-size: 18px; /* Adjust font size for mobile */
-    background: rgba(0, 0, 0, 0.5); /* Background color for visibility */
-    color: white; /* Text color */
-    border: none; /* Remove border */
-    border-radius: 50%; /* Make buttons circular */
-    cursor: pointer; /* Change cursor to pointer */
-    display: flex; /* Center icon */
-    align-items: center; /* Center icon vertically */
-    justify-content: center; /* Center icon horizontally */
-    z-index: 10; /* Ensure buttons are above other elements */
-    transition: background 0.3s; /* Smooth background transition */
+    width: 40px;
+    height: 40px;
+    font-size: 18px; 
+    background: rgba(0, 0, 0, 0.5);
+    color: white; 
+    border: none;  
+    border-radius: 50%;  
+    cursor: pointer; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    z-index: 10; 
+    transition: background 0.3s; 
 }
   .scroll-btn,.scroll-right,.scroll-left{
     /* left: 20; */
@@ -821,59 +891,74 @@ body {
 
 
   .gallery {
-    max-width: 100%; /* Ensure gallery is responsive */
+    max-width: 100%;  
   }
 
   .gallery img {
-    height: auto; /* Maintain aspect ratio */
+    height: auto;  
   }
 
   .search-container {
-    width: 100%; /* Make search container full width */
+    width: 100%;  
   }
 
   .nav-input {
-    width: 100%; /* Make input full width */
-    padding: 10px; /* Adjust padding */
+    width: 100%;  
+    padding: 10px; 
   }
 
   .calendar input[type="date"] {
-    width: 100%; /* Make date input full width */
-    margin-right: 0; /* Remove right margin */
+    width: 100%;  
+    margin-right: 0; 
   }
+  .faq-header h1 {
+    font-size: 36px; 
+}
+
+.faq-header p {
+    font-size: 16px;  
+}
+
+.faq-container {
+    padding: 20px;  
+}
+
+.faq-question {
+    font-size: 14px;  
+}
 }
 
 @media (max-width: 576px) {
   .Home-details h1 {
-    font-size: 30px; /* Further reduce heading size */
+    font-size: 30px;  
   }
 
   .Home-details p {
-    font-size: 14px; /* Adjust paragraph font size */
+    font-size: 14px;  
   }
 
   .Home-btn {
-    font-size: 16px; /* Adjust button font size */
+    font-size: 16px;  
   }
 
   .Rooms h1 {
-    font-size: 30px; /* Adjust room section heading size */
+    font-size: 30px;  
   }
 
   .room-item {
-    width: 90%; /* Make room items full width */
+    width: 90%; 
   }
 
   .contact-form {
-    width: 90%; /* Ensure contact form is responsive */
+    width: 90%; 
   }
 
   .footer h2 {
-    font-size: 18px; /* Adjust footer heading size */
+    font-size: 18px; 
   }
 
   .footer a,
   .footer h4 {
-    font-size: 12px; /* Adjust footer link size */
+    font-size: 12px;  
   }
 }

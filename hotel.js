@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
             location: "Makkah Al-Mukarramah - Al-Aziziyah South, in front of Al-Muhaisni Traffic light.", 
             price: "130 SAR /night", 
             images: [
+                "images/hoteln3.jpg",
                 "images/atwah1.jpg",
                 "images/atwah2.jpg",
                 "images/atwah3.jpg",
@@ -62,6 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
             location: "At Taif Road, Al Aziziyah, Mecca, Saudi Arabia, 24235", 
             price: "90 SAR /night", 
             images: [
+
+                "images/hoteln4.jpg",
                 "images/ATWA1.jpg",
                 "images/ATWA2.jpg",
                 "images/ATWA3.jpg",
@@ -76,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
             location: "CRCJ+GXC, King Abdul Aziz Rd, Ajyad, Makkah 24231, Saudi Arabia", 
             price: "200 SAR /night", 
             images: [
-                "images/hoteln2.jpg",
+                "images/hotel5.jpeg",
                 "images/Fares1.jpg",
                 "images/Fares2.jpg",
                 "images/Fares3.jpg",
@@ -222,6 +225,8 @@ document.addEventListener("DOMContentLoaded", function () {
 //         changeSlide(1);
 //     });
 // }
+// let selectedHotelName = room.name; // Store the selected hotel name
+
 document.getElementById("generate-bill").addEventListener("click", function () {
     const checkIn = document.getElementById("check-in").value;
     const checkOut = document.getElementById("check-out").value;
@@ -245,7 +250,6 @@ document.getElementById("generate-bill").addEventListener("click", function () {
     const totalPrice = nights * pricePerNight * guests;
 
     billContent.innerHTML = `
-        <p><strong>Hotel Name:</strong> XYZ Hotel</p>
         <p><strong>Check-in:</strong> ${checkIn}</p>
         <p><strong>Check-out:</strong> ${checkOut}</p>
         <p><strong>Guests:</strong> ${guests}</p>
@@ -258,23 +262,37 @@ document.getElementById("generate-bill").addEventListener("click", function () {
 
     document.getElementById("confirm-booking").setAttribute("data-message", 
         `Booking Details: 
-        Hotel: XYZ Hotel
         Check-in: ${checkIn}
         Check-out: ${checkOut}
         Guests: ${guests}
         Nights: ${nights}
-        Total Price: ₹SAR{totalPrice}`);
+        Total Price: SAR ₹${totalPrice}`);
 });
 
 document.querySelector(".close-btn").addEventListener("click", function () {
     document.getElementById("bill-modal").style.display = "none";
 });
 
+
 document.getElementById("confirm-booking").addEventListener("click", function () {
     const message = this.getAttribute("data-message");
     const encodedMessage = encodeURIComponent(message);
     window.location.href = `https://wa.me/1234567890?text=${encodedMessage}`;
 });
+document.getElementById("email").addEventListener("click", function () {
+    console.log("Email button clicked"); 
+    const message = this.getAttribute("data-message");
 
+    window.location.href = `BookingForm.html`;
+});
+
+
+function closeModal() {
+    const modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+
+// Event listeners for modal close button
+document.querySelector(".close-btn").addEventListener("click", closeModal);
 
 

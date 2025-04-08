@@ -6,103 +6,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
-    <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #cfcdcd;
-        margin: 0;
-    }
-    
-    .faq-container {
-        max-width: 800px;
-        margin: auto;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 40px;
-        margin-bottom: 20px;
-    }
-    .faq-header{
-        text-align: center;
-        width: 100%;
-        height: 50vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    
-    }
-    .faq-header h1{
-        font-size: 50px;
-    }
-    .faq-header p{
-        padding: 20px;
-        color: rgb(99, 96, 96);
-    }
-    
-    h1 {
-        text-align: center;
-        color: #333;
-    }
-    
-    .faq-item {
-        padding: 10px;
-    }
-    
-
-    .faq-question {
-        background-color: #05468c;
-        color: white;
-        border: none;
-        padding: 15px;
-        width: 100%;
-        text-align: left;
-        font-size: 16px;
-        border-radius: 5px;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: background-color 0.3s;
-    }
-    
-    .faq-question:hover {
-        background-color: #0056b3;
-    }
-    
-    .faq-answer {
-        display: none; 
-        padding: 15px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-top: 5px;
-        background-color: rgb(207, 204, 204);
-    }
-    </style>
     <title>Faqs</title>
 </head>
 <body>
 
     <nav class="Navbar">
-        <img class="logo" src="images/logo.png" alt="Logo">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#rooms">Rooms</a></li>
-            <li><a href="index.html#Contact">Contact</a></li>
-            <li><a href="index.html#About">About</a></li>
+        <img class="logo" src="images/logo.png" alt="Logo" />
+      
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#rooms">Rooms</a></li>
+          <li><a href="#Contact">Contact</a></li>
+          <li><a href="#About">About</a></li>
         </ul>
-        <!-- <div class="search-container">
-            <input id="searchInput" class="nav-input" type="search" placeholder="Search Location or Property Name">
-            <i class="fas fa-search search-icon" onclick="filterRooms()"></i>
-        </div> -->
+      
+        <button class="menu-toggle" id="menuToggle">☰</button>
+      
         <div class="search-container">
-            <input id="searchInput" class="nav-input" type="search" placeholder="Search hotel or location..." onkeyup="searchHotels()">
-            <i class="fas fa-search search-icon"></i>
-            <div id="searchResults" class="search-results"></div>
+          <input id="searchInput" class="nav-input" type="search" placeholder="Search hotel or location..." onkeyup="searchHotels()" />
+          <i class="fas fa-search search-icon"></i>
+          <div id="searchResults" class="search-results"></div>
         </div>
-        
-    </nav>
-
+      </nav>
+      
+      <nav class="sidebar" id="sidebar">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#rooms">Rooms</a></li>
+          <li><a href="#Contact">Contact</a></li>
+          <li><a href="#About">About</a></li>
+        </ul>
+        <button class="close-btn" id="closeBtn">×</button>
+      </nav>
+      <div class="overlay" id="overlay"></div>
+  
 
     <section id="Faq">
         <div class="faq-header">
@@ -252,30 +189,11 @@
     </section>
 
 
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
     <script>
 
 
-        document.addEventListener("DOMContentLoaded", function() {
-            const faqQuestions = document.querySelectorAll('.faq-question');
 
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
-                    const answer = this.nextElementSibling;
-                    const icon = this.querySelector('i');
-
-                    if (answer.style.display === "block") {
-                        answer.style.display = "none";
-                        icon.classList.remove('fa-minus');
-                        icon.classList.add('fa-plus');
-                    } else {
-                        answer.style.display = "block";
-                        icon.classList.remove('fa-plus');
-                        icon.classList.add('fa-minus');
-                    }
-                });
-            });
-        });
     </script>
 
 

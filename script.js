@@ -207,7 +207,6 @@ function closeModal() {
     modal.style.display = "none";
 }
 
-//checking
 
 // script.js
 
@@ -217,21 +216,41 @@ document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.getElementById('overlay');
     const closeBtn = document.getElementById('closeBtn');
 
-    // Function to open the sidebar
     menuToggle.addEventListener('click', function() {
-        sidebar.style.left = '0'; // Show sidebar
-        overlay.style.display = 'block'; // Show overlay
+        sidebar.style.left = '0'; 
+        overlay.style.display = 'block'; 
     });
 
-    // Function to close the sidebar
     closeBtn.addEventListener('click', function() {
-        sidebar.style.left = '-250px'; // Hide sidebar
-        overlay.style.display = 'none'; // Hide overlay
+        sidebar.style.left = '-250px'; 
+        overlay.style.display = 'none'; 
     });
 
-    // Close sidebar when clicking on the overlay
     overlay.addEventListener('click', function() {
-        sidebar.style.left = '-250px'; // Hide sidebar
-        overlay.style.display = 'none'; // Hide overlay
+        sidebar.style.left = '-250px'; 
+        overlay.style.display = 'none'; 
+    });
+});
+
+// faqs
+
+document.addEventListener("DOMContentLoaded", function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const icon = this.querySelector('i');
+
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            } else {
+                answer.style.display = "block";
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            }
+        });
     });
 });
