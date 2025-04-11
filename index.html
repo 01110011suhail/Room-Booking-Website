@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Room Booking Website</title>
-    <link rel="stylesheet" href="style1.css" />
+    <title>ATW-Hospitality</title>
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
   </head>
   <body>
     <!-- <nav class="Navbar">
@@ -114,7 +115,8 @@
           >
             <img src="images/hoteln1.jpg" alt="Hotel 1" />
             <h2>Mercure Makkah Aziziah </h2>
-            <p>Location: 6541 Koulliat Al Banat, Al Jamiah, Makkah 24243, Saudi Arabia </p>
+            <p>      <i class="fa-solid fa-location-dot"></i>
+              : Al Jamiah, Makkah 24243, Saudi Arabia </p>
             <p>Price: 90 SAR / night</p>
             <a href="hotel.html?id=1" class="view-details">View Details</a>
           </div>
@@ -122,7 +124,8 @@
           <div class="room-item" data-location="At Taif Road, Al Aziziyah, Mecca, Saudi Arabia, 24235" data-price="135 SAR">
             <img src="images/hoteln2.jpg" alt="Hotel 2" />
             <h2>Violet Hotel</h2>
-            <p>Location: At Taif Road, Al Aziziyah, Mecca, Saudi Arabia, 24235</p>
+            <p>      <i class="fa-solid fa-location-dot"></i>
+              : At Taif Road, Al Aziziyah, Mecca, Saudi Arabia, 24235</p>
             <p>Price: 135 SAR / night</p>
             <a href="hotel.html?id=2" class="view-details">View Details</a>
           </div>
@@ -136,13 +139,14 @@
             <img src="images/hoteln3.jpg" alt="Hotel 3" />
             <h2>ATWAH Dar Al Sharif
                </h2>
-            <p>Location: Makkah Al-Mukarramah - Al-Aziziyah South, in front of Al-Muhaisni Traffic light.</p>
+            <p>      <i class="fa-solid fa-location-dot"></i>
+              : Makkah Al-Mukarramah - Al-Aziziyah South, </p>
             <p>Price: 130 SAR TRIPLE 
                 140 SAR QUAD /night</p>
             <a href="hotel.html?id=3" class="view-details">View Details</a>
           </div>
 
-          <div
+          <!-- <div
             class="room-item"
             data-location="Off All Sitten Street-Facing Prophet Masjid -King Fahd Gate(23), 30921 Medina, Saudi Arabia"
             data-price="90 SAR 
@@ -151,13 +155,52 @@
             <img src="images/hoteln4.jpg" alt="Hotel 4" />
             <h2>Hotel ATWAH DAR AL BARKAWI 
             </h2>
-            <p>Location: Off All Sitten Street-Facing Prophet Masjid -King Fahd Gate(23), 30921 Medina, Saudi Arabia
+            <p><i class="fa-solid fa-location-dot"></i> Off All Sitten Street-Facing Prophet Masjid 30921 Medina, Saudi Arabia
            
                 </p>
-            <p>Price: 90 SAR 
+            <p><i class="fa-solid fa-hand-holding-dollar"></i> 90 SAR 
                 / night</p>
             <a href="hotel.html?id=4" class="view-details">View Details</a>
-          </div>
+          </div> -->
+          <div
+  class="room-item"
+  data-location="Off All Sitten Street-Facing Prophet Masjid -King Fahd Gate(23), 30921 Medina, Saudi Arabia"
+  data-price="90 SAR"
+>
+  <img src="images/hoteln4.jpg" alt="Hotel 4" class="room-img" />
+  <div class="room-content">
+    <h2 class="room-title">Hotel ATWAH DAR AL BARKAWI</h2>
+    <p class="room-location">
+      <i class="fa-solid fa-location-dot"></i>
+      Off All Sitten Street-Facing Prophet Masjid, 30921 Medina, Saudi Arabia
+    </p>
+    <p class="room-price">
+      <i class="fa-solid fa-hand-holding-dollar"></i>
+      90 SAR / night
+    </p>
+    <a href="hotel.html?id=4" class="view-details">View Details</a>
+  </div>
+</div>
+          <!-- <div
+  class="room-item"
+  data-location="Off All Sitten Street-Facing Prophet Masjid -King Fahd Gate(23), 30921 Medina, Saudi Arabia"
+  data-price="90 SAR"
+>
+  <img src="images/hoteln4.jpg" alt="Hotel 4" class="room-img" />
+  <div class="room-content">
+    <h2 class="room-title">Hotel ATWAH DAR AL BARKAWI</h2>
+    <p class="room-location">
+      <i class="fa-solid fa-location-dot"></i>
+      Off All Sitten Street-Facing Prophet Masjid, 30921 Medina, Saudi Arabia
+    </p>
+    <p class="room-price">
+      <i class="fa-solid fa-hand-holding-dollar"></i>
+      90 SAR / night
+    </p>
+    <a href="hotel.html?id=4" class="view-details">View Details</a>
+  </div>
+</div> -->
+
 
           <!-- <div
             class="room-item"
@@ -177,10 +220,11 @@
       <div class="room-container">
         <button class="scroll-btn scroll-left">&#10094;</button>
         <div class="room-listing" id="room-listing-2">
-          <div class="room-item" data-location="CRCJ+GXC, King Abdul Aziz Rd, Ajyad, Makkah 24231, Saudi Arabia" data-price="1050">
+          <div class="room-item" data-location=" Ajyad, Makkah 24231, Saudi Arabia" data-price="1050">
             <img src="images/hotel5.jpeg" alt="Hotel 1" />
             <h2>Fares Ajyad Hotel</h2>
-            <p>Location: CRCJ+GXC, King Abdul Aziz Rd, Ajyad, Makkah 24231, Saudi Arabia</p>
+            <p>      <i class="fa-solid fa-location-dot"></i>
+              :  Ajyad, Makkah 24231, Saudi Arabia</p>
             <p>Price: 200 sar / night</p>
             <a href="hotel.html?id=5" class="view-details">View Details</a>
           </div>

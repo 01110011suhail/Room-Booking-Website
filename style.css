@@ -144,8 +144,8 @@ body {
 
 .Home {
   width: 100%;
-  height: 100vh;
-  background: url(images/Home1.jpg) center/cover no-repeat;
+  height: 90vh;
+  background: url(BG/img2.jpg) center/cover no-repeat;
 }
 
 .home-img {
@@ -157,28 +157,50 @@ body {
 .Home-details {
   width: 42%;
   padding: 20px;
-  margin-left: 40px;
+  margin-left: 10px;
   color: rgb(237, 85, 85);
+  /* background-color: rgba(255, 255, 255, 0.1); */
+
+
 }
 
 .Home-details h1 {
-  font-size: 55px;
+  font-size: 45px;
+  color: goldenrod;
+
   margin-bottom: 10px;
   font-family: "Courier New", Courier, monospace;
+  margin-top: 120px;
+  text-shadow: 2px 2px 8px black;
+  font-family: "Audiowide", sans-serif;
+
+
+
 }
 
 .Home-details h1 span {
-  color: white;
-  font-size: 45px;
+  color: wheat;
+  font-size: 35px;
+  text-shadow: 2px 2px 8px black;
+
+
+  
 }
 
 .Home-details p {
-  backdrop-filter: blur(5px);
-  color: rgb(228, 226, 226);
+  /* backdrop-filter: blur(5px); */
+  color: white;
   width: 80%;
+  font-size: 20px;
+  font-weight: 800;
   line-height: 30px;
-  word-spacing: 4px;
-  letter-spacing: 2px;
+  word-spacing: 6px;
+  letter-spacing: 4px;
+  margin-left: 50px;
+  text-shadow: 2px 2px 8px black;
+  font-family: "Sofia", sans-serif;
+
+
 }
 
  .Home-btn {
@@ -197,6 +219,8 @@ body {
   margin-top: 40px;
   cursor: pointer;
   transition: 0.3s;
+  margin-left: 140px;
+
 }
 
 .Home-btn:hover {
@@ -272,22 +296,35 @@ body {
   width: 300px;
   box-shadow: 0 2px 10px rgba(227, 225, 225, 0.1);
   transition: transform 0.3s;
-  padding: 5px;
+  padding: 10px;
 }
 
 .room-container {
   padding: 0px 20px;
+
 }
 
-.room-item:hover {
+/* .room-item:hover {
   transform: scale(1.05);
+} */
+
+.room-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .room-item img {
   width: 100%;
   height: auto;
   object-fit: contain;
+  border-radius: 20px;
 }
+.room-content{
+  text-align: center  ;
+  left: 0;
+  padding: 10px;
+}
+
 
 .view-details {
   display: block;
@@ -482,6 +519,7 @@ body {
   transition: color 0.3s;
   cursor: pointer;
 }
+
 
 .footer a:hover,
 .footer h4:hover {
@@ -962,3 +1000,6 @@ h1 {
     font-size: 12px;  
   }
 }
+
+
+
