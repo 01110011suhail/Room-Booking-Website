@@ -4,8 +4,13 @@
     box-sizing: border-box;
   }
   
-  body {
+  html, body{
     font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  body{
+    padding: 0;
   }
   
   .Navbar {
@@ -47,7 +52,7 @@
     position: fixed;
     top: 0;
     left: -250px; 
-    width: 250px;
+    width: 60%;
     height: 100%;
     background-color: rgb(23, 24, 24);
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
@@ -144,8 +149,10 @@
   
   .Home {
     width: 100%;
-    height: 100vh;
-    background: url(images/Home1.jpg) center/cover no-repeat;
+    height: 90vh;
+    background: url(images/img2.jpg) center/cover no-repeat;
+    filter: brightness(80%);
+    /* background-color: #063970; */
   }
   
   .home-img {
@@ -156,29 +163,45 @@
   
   .Home-details {
     width: 42%;
-    padding: 20px;
-    margin-left: 40px;
+    /* padding: 10px; */
+    margin-left: 20px;
     color: rgb(237, 85, 85);
+    border-radius: 20px;
+
   }
   
   .Home-details h1 {
-    font-size: 55px;
-    margin-bottom: 10px;
-    font-family: "Courier New", Courier, monospace;
+    font-size: 45px;
+    color: gold;
+    text-shadow: 2px 2px 8px gray ;
+
+    font-family: "Lobster", sans-serif;
+    /* font-family: "Special Gothic Condensed One", sans-serif; */
+
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: 4px;
+    backdrop-filter: blur(10px);
+
   }
   
   .Home-details h1 span {
-    color: white;
-    font-size: 45px;
+    color: black;
+    font-size: 30px;
+    text-shadow: 2px 2px 8px white;
+    font-family: "Exo 2", sans-serif;
+
   }
   
   .Home-details p {
-    backdrop-filter: blur(5px);
-    color: rgb(228, 226, 226);
+    color: black;
     width: 80%;
-    line-height: 30px;
+    font-size: 20px;
     word-spacing: 4px;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
+    text-shadow: 2px 2px 8px white;
+    margin-left: 40px;
+    font-family: "Lobster", sans-serif;
   }
   
    .Home-btn {
@@ -194,7 +217,7 @@
     );
     color: white;
     border: none;
-    margin-top: 40px;
+    margin-top: 20px;
     cursor: pointer;
     transition: 0.3s;
   }
@@ -220,24 +243,30 @@
     text-decoration: none;
     font-size: 24px;
     transition: background-color 0.3s;
+
   }
   
   .whatsapp-button:hover {
     background-color: #128c7e;
-  }
+  } 
+
+
   
   .Rooms {
+    margin-top: -20px;
     width: 100%;
-    height: auto;
-    background: rgb(16, 19, 32);
-    text-align: center;
+    height: 140vh;
+    background: #215163;
+    background: linear-gradient(178deg, rgba(33, 81, 99, 1) 0%, rgba(102, 52, 97, 1) 50%, rgba(237, 121, 97, 1) 100%);  
     padding: 20px;
   }
   
   .Rooms h1 {
-    color: wheat;
+    color: white;
     margin-bottom: 20px;
     font-size: 40px;
+    font-family: "Lobster", sans-serif;
+    letter-spacing: 5px;
   }
   
   /* .room-listing {
@@ -248,7 +277,7 @@
     text-align: center;
     background: rgb(11, 19, 45);
   } */
-  .room-listing {
+  /* /* .room-listing {
     display: flex;
     overflow-x: auto; 
     scroll-behavior: smooth;
@@ -301,12 +330,13 @@
     font-weight: 700;
   }
   
-  /* Filters */
   #locationFilter,
   #priceFilter {
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 20px;
+    text-align: center;
+    margin-left: 200px;
   }
   
   .Hotel {
@@ -345,8 +375,109 @@
   .hotel-details ul li {
     margin: 5px 0;
   }
+   */
+
+   .room-listing {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 30px;
+    padding: 20px;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    -ms-overflow-style: none;
+  }
   
-   .calendar {
+  .room-listing::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .room-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 320px;
+    min-width: 320px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .room-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .room-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .room-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .room-info h2 {
+    font-size: 18px;
+    margin: 0;
+    color: #333;
+  }
+  
+  .room-info .location {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .room-info .price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+  }
+  
+  .view-details {
+    display: inline-block;
+    background-color: #0a5827;
+    color: #fff;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .view-details:hover {
+    background-color: #08451f;
+  }
+  #locationFilter,
+  #priceFilter {
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-left: 200px;
+  }
+  
+  /* Responsive */
+  /* @media (max-width: 768px) {
+    .room-item {
+      width: 90%;
+      min-width: unset;
+      margin: 0 auto;
+    }
+  } */
+  
+   .calendar { 
     margin: 20px 0;
     text-align: left;
   }
@@ -387,11 +518,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: linear-gradient(160deg,#323131,rgb(11, 11, 31), rgb(12, 12, 28));
+    /* background: linear-gradient(160deg,#323131,rgb(11, 11, 31), rgb(12, 12, 28)); */
+    background: url(images/contact-bg.jpg) center/cover no-repeat;
   }
   
   #Contact h1 {
     font-size: 40px;
+    margin-left: 600px;
+    color: white;
   }
   
   .contact-form {
@@ -402,8 +536,8 @@
     /* background: rgba(57, 56, 56, 0.1); */
     background: linear-gradient( black);
     border: 1px solid black;
-    border-radius: 50px 4px;
-    /* background: black; */
+    border-radius: 90px 20px;
+    margin-left: 600px;
     box-shadow:
       inset 0 -3em 3em rgba(244, 245, 244, 0.3),
       0 0 0 2px white,
@@ -417,7 +551,7 @@
     margin: 10px 40px 0 0;
     border-radius: 10px;
     border: none;
-      height: 5vh;
+    height: 5vh;
   }
   .contact-form textarea{
       height: 10vh;
@@ -428,14 +562,17 @@
     margin: 20px auto 0;
     padding: 20px;
     border-radius: 20px;
-    background: linear-gradient(90deg,  rgb(229, 173, 173),#e66465,orangered);  color: black;
+    background: linear-gradient(90deg,  orangered,#ED7961);  color: black;
     cursor: pointer;
     border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
   }
   
    #About {
     width: 100%;
-    height: 80vh;
+    height: auto;
     background: rgb(41, 41, 41);
     color: white;
   }
@@ -485,7 +622,7 @@
   
   .footer a:hover,
   .footer h4:hover {
-    color: #a1c7ec;
+    color: #0e7ceb;
   }
   
   .copy {
@@ -521,7 +658,7 @@
   .room-item {
     flex: 0 0  auto;
     width: 300px; 
-    border: 1px solid #fd1010;
+    /* border: 1px solid #fd1010; */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -543,11 +680,10 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+    background: rgba(21, 0, 0, 0.2);
+    color: rgb(25, 1, 1);
     border: none;
     cursor: pointer;
-    padding: 10px;
     font-size: 24px;
     z-index: 10;
     border-radius: 50%;
@@ -556,11 +692,11 @@
   }
   
   .scroll-left {
-    left: 10px;
+    left: 90px;
   }
   
   .scroll-right {
-    right: 10px;
+    right: 90px;
   }
   
   .scroll-btn:hover {
@@ -908,9 +1044,10 @@
       border-radius: 8px;
       padding: 15px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      width: 150px; /* Fixed width for feature items */
+      width: 150px; 
       text-align: center;
-      cursor: pointer;            margin-bottom: 20px;
+      cursor: pointer;         
+         margin-bottom: 20px;
   
   
   }
@@ -992,9 +1129,15 @@
   
   
   /* mobile resonsiveness */
+
   
   
-  @media (max-width: 768px) {
+  @media  (max-width: 600px) {
+    /* html,body {
+      font-family: Arial, Helvetica, sans-serif;
+      width: 100%;
+      overflow-x: hidden;
+    } */
     .Navbar {
       flex-direction: column;
       align-items: flex-start;
@@ -1070,7 +1213,7 @@
     }
   
     .Home-details p {
-      width: 100%;
+      width: 80%;
       color: black;
   
     }
@@ -1099,16 +1242,23 @@
       background: red;
     }
   
-    .room-item {
+    /* .room-item {
       width: 100%;
       margin: 10px 0;
+    } */
+    .room-item {
+      width: 90%;
+      min-width: unset;
+      margin: 0 auto;
     }
     #searchInput{
       width: 75%;
       margin-left: 100px;
+      margin-top: -20px;
     }
     .logo{
-      margin-top: 20px;
+      margin-top: 10px;
+      /* display: none; */
     }
   
    
@@ -1194,7 +1344,7 @@
       margin-right: 0; 
     }
     .faq-header h1 {
-      font-size: 36px; 
+      font-size: 28px; 
   }
   
   .faq-header p {
@@ -1202,7 +1352,7 @@
   }
   
   .faq-container {
-      padding: 20px;  
+      padding: 15px;  
   }
   
   .faq-question {
@@ -1276,9 +1426,12 @@
   
   }
   
-  @media (max-width: 576px) {
-    .Home-details h1 {
-      font-size: 30px;  
+  @media (max-width: 376px) {
+    /* .nav-input{
+      margin-top: -80px;
+    } */
+        .Home-details h1 {
+      font-size: 24px;  
     }
   
     .Home-details p {
@@ -1290,7 +1443,7 @@
     }
   
     .Rooms h1 {
-      font-size: 30px;  
+      font-size: 28px;  
     }
   
     .room-item {

@@ -227,72 +227,118 @@ document.addEventListener("DOMContentLoaded", function () {
 // }
 // let selectedHotelName = room.name; // Store the selected hotel name
 
-document.getElementById("generate-bill").addEventListener("click", function () {
-    const checkIn = document.getElementById("check-in").value;
-    const checkOut = document.getElementById("check-out").value;
-    const guests = document.getElementById("guests").value;
-    const errorContainer = document.getElementById("error-message");
-    const billModal = document.getElementById("bill-modal");
-    const billContent = document.getElementById("bill-content");
 
-    errorContainer.innerHTML = "";
+// Set today's date as the minimum check-in date
+const today = new Date();
+const minDate = today.toISOString().split('T')[0];
 
-    if (!checkIn) errorContainer.innerHTML += "<p>Please select a check-in date.</p>";
-    if (!checkOut) errorContainer.innerHTML += "<p>Please select a check-out date.</p>";
-    if (!guests || guests < 1) errorContainer.innerHTML += "<p>Please enter the number of guests.</p>";
+const checkInInput = document.getElementById("check-in");
+const checkOutInput = document.getElementById("check-out");
+const guestsInput = document.getElementById("guests");
+const errorContainer = document.getElementById("error-message");
+const billModal = document.getElementById("bill-modal");
+const billContent = document.getElementById("bill-content");
+const confirmBookingBtn = document.getElementById("confirm-booking");
+const emailBtn = document.getElementById("email");
 
-    if (errorContainer.innerHTML !== "") return;
+// Set minimum check-in to today
+checkInInput.setAttribute("min", minDate);
 
-    const pricePerNight = 1000; 
-    const startDate = new Date(checkIn);
-    const endDate = new Date(checkOut);
-    const nights = (endDate - startDate) / (1000 * 60 * 60 * 24);
-    const totalPrice = nights * pricePerNight * guests;
+// Update check-out dynamically based on check-in
+checkInInput.addEventListener("change", () => {
+  const checkInDate = new Date(checkInInput.value);
+  
+  if (!checkInInput.value) return;
 
-    billContent.innerHTML = `
-        <p><strong>Check-in:</strong> ${checkIn}</p>
-        <p><strong>Check-out:</strong> ${checkOut}</p>
-        <p><strong>Guests:</strong> ${guests}</p>
-        <p><strong>Number of Nights:</strong> ${nights}</p>
-        <p><strong>Price Per Night:</strong> ₹${pricePerNight}</p>
-        <p><strong>Total Amount:</strong> ₹${totalPrice}</p>
-    `;
+  // Min checkout = next day
+  const minCheckoutDate = new Date(checkInDate);
+  minCheckoutDate.setDate(minCheckoutDate.getDate() + 1);
 
-    billModal.style.display = "block";
+  // Max checkout = 30 days after check-in
+  const maxCheckoutDate = new Date(checkInDate);
+  maxCheckoutDate.setDate(maxCheckoutDate.getDate() + 30);
 
-    document.getElementById("confirm-booking").setAttribute("data-message", 
-        `Booking Details: 
-        Check-in: ${checkIn}
-        Check-out: ${checkOut}
-        Guests: ${guests}
-        Nights: ${nights}
-        Total Price: SAR ₹${totalPrice}`);
+  checkOutInput.setAttribute("min", minCheckoutDate.toISOString().split('T')[0]);
+  checkOutInput.setAttribute("max", maxCheckoutDate.toISOString().split('T')[0]);
 });
 
-document.querySelector(".close-btn").addEventListener("click", function () {
-    document.getElementById("bill-modal").style.display = "none";
+// Restrict guests between 1 and 10
+guestsInput.setAttribute("min", "1");
+guestsInput.setAttribute("max", "10");
+
+document.getElementById("generate-bill").addEventListener("click", () => {
+  const checkIn = checkInInput.value;
+  const checkOut = checkOutInput.value;
+  const guests = parseInt(guestsInput.value, 10);
+  
+  errorContainer.innerHTML = "";
+
+  // Validations
+  if (!checkIn) errorContainer.innerHTML += "<p>Please select a check-in date.</p>";
+  if (!checkOut) errorContainer.innerHTML += "<p>Please select a check-out date.</p>";
+  if (!guests || guests < 1) errorContainer.innerHTML += "<p>Please enter number of guests.</p>";
+  if (guests > 10) errorContainer.innerHTML += "<p>Maximum 10 guests are allowed.</p>";
+
+  const startDate = new Date(checkIn);
+  const endDate = new Date(checkOut);
+  const nights = (endDate - startDate) / (1000 * 60 * 60 * 24);
+
+  if (nights <= 0) {
+    errorContainer.innerHTML += "<p>Check-out date must be after check-in date.</p>";
+  }
+
+  if (nights > 30) {
+    errorContainer.innerHTML += "<p>You can book only up to 30 nights.</p>";
+  }
+
+  if (errorContainer.innerHTML !== "") return;
+
+  const pricePerNight = 1000;
+  const totalPrice = nights * pricePerNight * guests;
+
+  billContent.innerHTML = `
+    <p><strong>Check-in:</strong> ${checkIn}</p>
+    <p><strong>Check-out:</strong> ${checkOut}</p>
+    <p><strong>Guests:</strong> ${guests}</p>
+    <p><strong>Number of Nights:</strong> ${nights}</p>
+    <p><strong>Price Per Night:</strong> ₹${pricePerNight}</p>
+    <p><strong>Total Amount:</strong> ₹${totalPrice}</p>
+  `;
+
+  billModal.style.display = "block";
+
+  // Set WhatsApp message data
+  confirmBookingBtn.setAttribute("data-message",
+    `Booking Details:\nCheck-in: ${checkIn}\nCheck-out: ${checkOut}\nGuests: ${guests}\nNights: ${nights}\nTotal Price: ₹${totalPrice}`
+  );
+});
+
+// Close modal
+billModal.querySelector(".close-btn").addEventListener("click", () => {
+  billModal.style.display = "none";
+});
+
+// WhatsApp integration
+confirmBookingBtn.addEventListener("click", function () {
+  const message = this.getAttribute("data-message");
+  const encodedMessage = encodeURIComponent(message);
+  window.location.href = `https://wa.me/1234567890?text=${encodedMessage}`;
+});
+
+// Email/booking page redirect
+emailBtn.addEventListener("click", function () {
+  const message = this.getAttribute("data-message");
+  const encodedMessage = encodeURIComponent(message);
+  window.location.href = `BookingForm.html?data=${encodedMessage}`;
 });
 
 
-document.getElementById("confirm-booking").addEventListener("click", function () {
-    const message = this.getAttribute("data-message");
-    const encodedMessage = encodeURIComponent(message);
-    window.location.href = `https://wa.me/1234567890?text=${encodedMessage}`;
-});
-document.getElementById("email").addEventListener("click", function () {
-    console.log("Email button clicked"); 
-    const message = this.getAttribute("data-message");
+// function closeModal() {
+//     const modal = document.getElementById("myModal");
+//     modal.style.display = "none";
+// }
 
-    window.location.href = `BookingForm.html`;
-});
-
-
-function closeModal() {
-    const modal = document.getElementById("myModal");
-    modal.style.display = "none";
-}
-
-// Event listeners for modal close button
-document.querySelector(".close-btn").addEventListener("click", closeModal);
+// // Event listeners for modal close button
+// document.querySelector("close-btn").addEventListener("click", closeModal);
 
 
